@@ -24,14 +24,14 @@ def get_tasks(soup):
         a = article.find("a")
         title = a.text
         url = f"https://freelance.habr.com{a['href']}"
-        price_count = article.find("spam", class_="count")
+        price_count = article.find("span", class_="count")
         price = price_count.text if price_count else "договорная"
         tasks.append({"title": title, "url": url, "price": price})
 
 
 if __name__ == "__main__":
 
-    url = "https://freelance.habr.com/tasks?q=парсер"
+    url = "https://freelance.habr.com/tasks?q=python"
 
     tasks = []
 
